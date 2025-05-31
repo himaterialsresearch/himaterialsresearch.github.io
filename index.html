@@ -14,8 +14,24 @@
     header {
       background-color: #003366;
       color: #fff;
-      padding: 20px;
-      text-align: center;
+      padding: 10px 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .header-text p {
+      margin: 0;
+      font-size: 1em;
     }
 
     nav {
@@ -23,8 +39,6 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      padding: 0;
-      margin: 0;
     }
 
     nav a {
@@ -42,7 +56,7 @@
 
     .container {
       display: flex;
-      height: calc(100vh - 90px); /* subtract header height */
+      height: calc(100vh - 90px);
     }
 
     .left-panel {
@@ -78,8 +92,11 @@
 <body>
 
 <header>
-  <h1>HIMaR</h1>
-  <p>Hawaii Institute of Materials Research</p>
+  <img src="HIMaR logo.png" alt="HIMaR Logo" class="logo" />
+  <div class="header-text">
+    <h1>HIMaR</h1>
+    <p>Hawaii Institute of Materials Research</p>
+  </div>
 </header>
 
 <div class="container">
@@ -88,26 +105,4 @@
       <a href="about.html">About</a>
       <a href="people.html">People</a>
       <a href="research.html">Research</a>
-      <a href="facilities.html">Facilities</a>
-      <a href="software.html">Software</a>
-    </nav>
-  </div>
-
-  <div class="right-panel">
-    <img src="picture1.png" alt="Main Graphic" class="main-image" />
-    <h2>Welcome to HIMaR</h2>
-    <p>
-      The Hawaii Institute of Materials Research (HIMaR) is a collaborative research hub dedicated to advancing the science and engineering of materials for next-generation applications. Our mission is to support interdisciplinary innovation across materials chemistry, nanotechnology, sustainability, and advanced manufacturing.
-    </p>
-    <p>
-      Based at the University of Hawaii, HIMaR serves as a nexus for academic, industry, and federal partnerships aimed at accelerating discovery and workforce development in materials science.
-    </p>
-  </div>
-</div>
-
-<footer>
-  &copy; 2025 HIMaR – Hawaii Institute of Materials Research
-</footer>
-
-</body>
-</html>
+      <a href="facilities.html">Facilit
