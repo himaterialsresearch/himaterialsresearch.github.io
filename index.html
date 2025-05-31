@@ -6,54 +6,64 @@
   <title>HIMaR – Hawaii Institute of Materials Research</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: Arial, sans-serif;
     }
 
     header {
       background-color: #003366;
       color: #fff;
-      padding: 20px 40px;
+      padding: 20px;
       text-align: center;
     }
 
     nav {
       background-color: #0059b3;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+      margin: 0;
     }
 
     nav a {
       color: white;
       padding: 14px 20px;
       text-decoration: none;
-      display: inline-block;
       font-weight: bold;
+      border-bottom: 1px solid #004080;
+      text-align: center;
     }
 
     nav a:hover {
       background-color: #004080;
     }
 
-    main {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-      background-color: #fff;
+    .container {
+      display: flex;
+      height: calc(100vh - 90px); /* subtract header height */
     }
 
-    img {
+    .left-panel {
+      width: 25%;
+      background-color: #e6f0ff;
+    }
+
+    .right-panel {
+      width: 75%;
+      padding: 30px;
+      overflow-y: auto;
+      background-color: #ffffff;
+    }
+
+    .main-image {
+      width: 100%;
       max-width: 100%;
       height: auto;
-      display: block;
-      margin: 20px auto;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
     }
 
     footer {
@@ -61,6 +71,7 @@
       padding: 20px;
       font-size: 0.9em;
       color: #999;
+      background-color: #f0f0f0;
     }
   </style>
 </head>
@@ -71,22 +82,28 @@
   <p>Hawaii Institute of Materials Research</p>
 </header>
 
-<nav>
-  <a href="about.html">About</a>
-  <a href="people.html">People</a>
-  <a href="research.html">Research</a>
-  <a href="facilities.html">Facilities</a>
-  <a href="software.html">Software</a>
-</nav>
+<div class="container">
+  <div class="left-panel">
+    <nav>
+      <a href="about.html">About</a>
+      <a href="people.html">People</a>
+      <a href="research.html">Research</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="software.html">Software</a>
+    </nav>
+  </div>
 
-<main>
-  <img src="A_high-resolution_digital_photograph_collage_showc.png" alt="Materials Research Collage" />
-
-  <h2>Welcome to HIMaR</h2>
-  <p>
-    The Hawaii Institute of Materials Research (HIMaR) is a collaborative research hub dedicated to advancing the science and engineering of materials for next-generation applications. Our mission is to support interdisciplinary innovation across materials chemistry, nanotechnology, sustainability, and advanced manufacturing. Based at the University of Hawaii, HIMaR serves as a nexus for academic, industry, and federal partnerships aimed at accelerating discovery and workforce development in materials science.
-  </p>
-</main>
+  <div class="right-panel">
+    <img src="picture1.png" alt="Main Graphic" class="main-image" />
+    <h2>Welcome to HIMaR</h2>
+    <p>
+      The Hawaii Institute of Materials Research (HIMaR) is a collaborative research hub dedicated to advancing the science and engineering of materials for next-generation applications. Our mission is to support interdisciplinary innovation across materials chemistry, nanotechnology, sustainability, and advanced manufacturing.
+    </p>
+    <p>
+      Based at the University of Hawaii, HIMaR serves as a nexus for academic, industry, and federal partnerships aimed at accelerating discovery and workforce development in materials science.
+    </p>
+  </div>
+</div>
 
 <footer>
   &copy; 2025 HIMaR – Hawaii Institute of Materials Research
