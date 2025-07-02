@@ -158,6 +158,28 @@
   <footer>
     &copy; 2025 HIMaR – Hawaii Institute of Materials Research
   </footer>
+<script>
+  const carousel = document.querySelector('.carousel-container');
 
+  let scrollAmount = 0;
+  let autoScrollSpeed = 1; // pixels per frame
+  let isHovered = false;
+
+  function autoScroll() {
+    if (!isHovered) {
+      scrollAmount += autoScrollSpeed;
+      carousel.scrollLeft = scrollAmount;
+      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0; // Reset scroll to start
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+
+  carousel.addEventListener('mouseenter', () => isHovered = true);
+  carousel.addEventListener('mouseleave', () => isHovered = false);
+
+  autoScroll();
+</script>
 </body>
 </html>
