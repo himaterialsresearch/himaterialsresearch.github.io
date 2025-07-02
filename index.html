@@ -74,7 +74,28 @@
       color: #003366;
       margin-top: 0;
     }
+.carousel-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  margin: 30px 0;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
 
+.carousel {
+  display: flex;
+  gap: 20px;
+}
+
+.carousel-item {
+  width: 300px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
     footer {
       text-align: center;
       font-size: 0.9em;
@@ -94,13 +115,13 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-placeholder"></div>
-    <div class="header-text">
-      <h1>HIMaR</h1>
-      <p>Hawaii Institute of Materials Research</p>
-    </div>
-  </header>
+<header>
+  <img src="HIMaR logo.png" alt="HIMaR Logo" style="height: 120px; margin-right: 20px;" />
+  <div class="header-text">
+    <h1>HIMaR</h1>
+    <p>Hawaii Institute of Materials Research</p>
+  </div>
+</header>
 
   <nav>
     <a href="about.html">About</a>
@@ -119,6 +140,17 @@
     <p>In Hawaii, materials science is particularly important due to the state’s unique environmental and economic landscape. The islands face challenges related to sustainability, infrastructure resilience, and renewable energy, all of which can be addressed through advanced materials research. From corrosion-resistant materials for marine and aerospace applications to energy storage solutions for Hawaii’s clean energy transition, materials science drives innovation that supports the local economy and enhances technological self-sufficiency.</p>
     
     <p>At the Hawaii Institute of Materials Research (HIMaR), we bring together researchers, industry partners, and students to explore cutting-edge materials solutions, leveraging Hawaii’s unique resources and global scientific collaborations to advance materials science for a more sustainable future.</p>
+
+
+<h2>Explore Our Research</h2>
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-item" style="background-color: #e74c3c;"></div>
+    <div class="carousel-item" style="background-color: #27ae60;"></div>
+    <div class="carousel-item" style="background-color: #2980b9;"></div>
+    <div class="carousel-item" style="background-color: #f39c12;"></div>
+  </div>
+</div>
 
     <div class="image-placeholder"></div>
   </main>
