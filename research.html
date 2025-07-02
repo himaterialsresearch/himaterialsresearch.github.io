@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research – HIMaR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .header-text p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+    }
+
+    nav {
+      background-color: #0059b3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 14px 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #004080;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 30px auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 240px;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide-placeholder {
+      width: 100%;
+      height: 240px;
+    }
+
+    .slide1 { background-color: #3498db; }
+    .slide2 { background-color: #2ecc71; }
+    .slide3 { background-color: #e67e22; }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 10px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 4px;
+      user-select: none;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px;
+      background-color: white;
+    }
+
+    .research-intro h2 {
+      color: #003366;
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .research-intro p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .themes h3 {
+      font-size: 1.5em;
+      margin-top: 40px;
+      color: #003366;
+    }
+
+    .themes ul {
+      list-style: disc;
+      padding-left: 20px;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="HIMaR logo.png" alt="HIMaR Logo" class="logo">
+    <div class="header-text">
+      <h1>HIMaR</h1>
+      <p>Hawaii Institute of Materials Research</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="people.html">People</a>
+    <a href="research.html">Research</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="slideshow-container">
+    <div class="slide active">
+      <div class="slide-placeholder slide1"></div>
+    </div>
+    <div class="slide">
+      <div class="slide-placeholder slide2"></div>
+    </div>
+    <div class="slide">
+      <div class="slide-placeholder slide3"></div>
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
+  </div>
+
+  <main>
+    <section class="research-intro">
+      <h2>Research at HIMaR</h2>
+      <p>
+        HIMaR conducts advanced materials research focused on addressing critical challenges in sustainability, environmental remediation, energy conversion, and defense applications. Our interdisciplinary projects bring together expertise in chemistry, physics, engineering, and data science to develop next-generation materials and technologies.
+      </p>
+    </section>
+
+    <section class="themes">
+      <h3>Key Research Themes</h3>
+      <ul>
+        <li>Environmental Catalysts</li>
+        <li>Environmental Sorbents</li>
+        <li>Sensors</li>
+        <li>Nanosystem Integration</li>
+        <li>Defect Diagnostics</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 HIMaR – Hawaii Institute of Materials Research
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function changeSlide(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+  </script>
+
+</body>
+</html>
