@@ -3,10 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HIMaR - Hawaii Institute of Materials Research</title>
+  <title>HIMaR – Hawaii Institute of Materials Research</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+	background-color: #003366;
+	color: #fff;
+	padding: 10px 40px;
+	display: flex;
+	align-items: center;
+	height: 100px;
+	}
+
+	.logo {
+	 height: 100%;
+	 max-height: 100px;
+	 margin-right: 20px;
+	}
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .header-text p {
+      margin: 0;
+      font-size: 1em;
+    }
+
+    nav {
+      background-color: #0059b3;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid #004080;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #004080;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 90px);
+    }
+
+    .left-panel {
+      width: 25%;
+      background-color: #e6f0ff;
+    }
+
+    .right-panel {
+      width: 75%;
+      padding: 30px;
+      overflow-y: auto;
+      background-color: #ffffff;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #999;
+      background-color: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to HIMaR</h1>
-  <p>This is the homepage of the Hawaii Institute of Materials Research.</p>
-</body>
-</html>
+
+<header>
+  <img src="HIMaR logo.png" alt="HIMaR Logo" class="logo" />
+  <div class="header-text">
+    <h1>HIMaR</h1>
+    <p>Hawaii Institute of Materials Research</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="left-panel">
+    <nav>
+      <a href="about.html">About</a>
+      <a href="people.html">People</a>
+      <a href="research.html">Research</a>
+      <a href="facilities.html">Facilities</a>
