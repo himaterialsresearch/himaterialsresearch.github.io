@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facilities – HIMaR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .header-text p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+    }
+
+    nav {
+      background-color: #0059b3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 14px 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #004080;
+    }
+
+    .carousel-banner-container {
+      overflow: hidden;
+      background-color: #e0e0e0;
+      padding: 10px 0;
+    }
+
+    .carousel-banner {
+      display: flex;
+      gap: 20px;
+      animation: scroll-left 30s linear infinite;
+    }
+
+    .banner-item {
+      width: 300px;
+      height: 160px;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+
+    .banner1 { background-color: #e74c3c; }
+    .banner2 { background-color: #27ae60; }
+    .banner3 { background-color: #2980b9; }
+    .banner4 { background-color: #f39c12; }
+    .banner5 { background-color: #8e44ad; }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px;
+      background-color: white;
+    }
+
+    .intro h2 {
+      color: #003366;
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .intro p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .techniques h3 {
+      font-size: 1.5em;
+      margin-top: 40px;
+      color: #003366;
+    }
+
+    .techniques ul {
+      list-style: disc;
+      padding-left: 20px;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="HIMaR logo.png" alt="HIMaR Logo" class="logo">
+    <div class="header-text">
+      <h1>HIMaR</h1>
+      <p>Hawaii Institute of Materials Research</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="people.html">People</a>
+    <a href="research.html">Research</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="carousel-banner-container">
+    <div class="carousel-banner">
+      <div class="banner-item banner1"></div>
+      <div class="banner-item banner2"></div>
+      <div class="banner-item banner3"></div>
+      <div class="banner-item banner4"></div>
+      <div class="banner-item banner5"></div>
+      <!-- repeat to enable seamless loop -->
+      <div class="banner-item banner1"></div>
+      <div class="banner-item banner2"></div>
+      <div class="banner-item banner3"></div>
+      <div class="banner-item banner4"></div>
+      <div class="banner-item banner5"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="intro">
+      <h2>Central Analytical Core Facilities</h2>
+      <p>
+        The Hawaii Institute of Materials Research (HIMaR) oversees a centralized core of advanced analytical facilities supporting materials research across disciplines. These shared resources are designed to enable innovation by providing researchers with access to powerful tools for structural, chemical, and morphological characterization of materials.
+      </p>
+      <p>
+        Our analytical core serves academic researchers, students, industry partners, and government collaborators. With expertise across a wide range of measurement techniques and advanced instrumentation, HIMaR supports research in sustainability, energy, environment, and advanced manufacturing.
+      </p>
+    </section>
+
+    <section class="techniques">
+      <h3>Available Techniques</h3>
+      <ul>
+        <li>X-ray Diffraction (XRD)</li>
+        <li>X-ray Fluorescence (XRF)</li>
+        <li>Raman Spectroscopy</li>
+        <li>Laser-Induced Breakdown Spectroscopy (LIBS)</li>
+        <li>Atomic Force Microscopy (AFM)</li>
+        <li>Liquid Density Measurements</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 HIMaR – Hawaii Institute of Materials Research
+  </footer>
+
+</body>
+</html>
