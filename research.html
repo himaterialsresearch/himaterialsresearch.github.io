@@ -311,6 +311,7 @@
       $3Dmol.embed();
 
       const viewer = $3Dmol.viewers[Object.keys($3Dmol.viewers)[0]];
+	  viewer.spin("y");  // start spinning around the y-axis
 	  
       document.getElementById("style-menu").addEventListener("change", (e) => {
         const style = e.target.value;
