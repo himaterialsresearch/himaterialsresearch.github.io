@@ -34,6 +34,26 @@
       margin: 5px 0 0;
       font-size: 1.1em;
     }
+	
+	.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #003366;
+}
 
     nav {
       background-color: #0059b3;
@@ -157,20 +177,23 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="slideshow-container">
-    <div class="slide active">
-      <div class="slide-placeholder slide1"></div>
-    </div>
-    <div class="slide">
-      <div class="slide-placeholder slide2"></div>
-    </div>
-    <div class="slide">
-      <div class="slide-placeholder slide3"></div>
-    </div>
-
-    <a class="prev" onclick="changeSlide(-1)">❮</a>
-    <a class="next" onclick="changeSlide(1)">❯</a>
+<div class="slideshow-container">
+  <div class="slide active">
+    <div class="slide-placeholder slide1"></div>
   </div>
+  <div class="slide">
+    <div class="slide-placeholder slide2"></div>
+  </div>
+  <div class="slide">
+    <div class="slide-placeholder slide3"></div>
+  </div>
+</div>
+
+<div class="dots-container">
+  <span class="dot active" onclick="currentSlide(0)"></span>
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+</div>
 
   <main>
     <section class="research-intro">
@@ -197,20 +220,29 @@
   </footer>
 
   <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    slideIndex = index;
+  }
 
-    function changeSlide(n) {
-      slideIndex = (slideIndex + n + slides.length) % slides.length;
-      showSlide(slideIndex);
-    }
-  </script>
+  function currentSlide(n) {
+    showSlide(n);
+  }
+
+  function autoAdvance() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  setInterval(autoAdvance, 4000); // advance every 4 seconds
+</script>
 
 </body>
 </html>
