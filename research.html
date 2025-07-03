@@ -311,7 +311,7 @@
       $3Dmol.embed();
 
       const viewer = $3Dmol.viewers[Object.keys($3Dmol.viewers)[0]];
-
+	  
       document.getElementById("style-menu").addEventListener("change", (e) => {
         const style = e.target.value;
         const styles = {
@@ -321,6 +321,7 @@
           default: { stick: {}, sphere: { radius: 0.4 } }
         };
         viewer.setStyle({}, styles[style] || styles.default);
+        viewer.spin("y");  // start spinning around the y-axis
         viewer.render();
       });
 
