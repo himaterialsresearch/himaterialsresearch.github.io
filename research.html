@@ -161,18 +161,18 @@
       font-size: 1.1em;
     }
 
-	.viewer-container {
-	flex: 1 1 45%;
-	min-width: 300px;
-	}
+    .viewer-container {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
 
-	#viewer {
-	width: 100%;
-	height: 400px;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	box-sizing: border-box;
-	}
+    .viewer-container > div.viewer_3Dmoljs {
+      height: 400px;
+      width: 100%;
+      position: relative;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
 
     .viewer-controls {
       margin-top: 10px;
@@ -252,7 +252,12 @@
       </div>
 
       <div class="viewer-container">
-        <div id="viewer"></div>
+        <div class="viewer_3Dmoljs"
+             data-href="3dmol/SIQMAK.cif"
+             data-backgroundcolor="black"
+             data-style="stick:sphere:radius=0.4"
+             data-autoload="true">
+        </div>
         <div class="viewer-controls">
           <label for="style-menu">Display Style:</label>
           <select id="style-menu">
@@ -264,8 +269,8 @@
 
           <label for="bg-menu" style="margin-left: 20px;">Background:</label>
           <select id="bg-menu">
-            <option value="white">White</option>
             <option value="black">Black</option>
+            <option value="white">White</option>
             <option value="lightgrey">Light Grey</option>
             <option value="transparent">Transparent</option>
           </select>
@@ -278,61 +283,53 @@
     &copy; 2025 HIMaR – Hawaii Institute of Materials Research
   </footer>
 
-<script>
-  let slideIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-      dots[i].classList.toggle('active', i === index);
-    });
-    slideIndex = index;
-  }
-
-  function currentSlide(n) {
-    showSlide(n);
-  }
-
-  function autoAdvance() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  setInterval(autoAdvance, 4000);
-
-  // DOM-ready viewer init
-  window.addEventListener('DOMContentLoaded', () => {
-    const viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
-
-    fetch('3dmol/SIQMAK.cif')
-      .then(response => response.text())
-      .then(data => {
-        viewer.addModel(data, "cif");
-        viewer.setStyle({}, { stick: {}, sphere: { radius: 0.4 } });
-        viewer.zoomTo();
-        viewer.render();
-
-        document.getElementById("style-menu").addEventListener("change", (e) => {
-          const style = e.target.value;
-          const styles = {
-            stick: { stick: {} },
-            sphere: { sphere: { radius: 0.4 } },
-            line: { line: {} },
-            default: { stick: {}, sphere: { radius: 0.4 } }
-          };
-          viewer.setStyle({}, styles[style] || styles.default);
-          viewer.render();
-        });
-
-        document.getElementById("bg-menu").addEventListener("change", (e) => {
-          viewer.setBackgroundColor(e.target.value);
-          viewer.render();
-        });
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
       });
-  });
-</script>
+      slideIndex = index;
+    }
+
+    function currentSlide(n) {
+      showSlide(n);
+    }
+
+    function autoAdvance() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    setInterval(autoAdvance, 4000);
+
+    window.addEventListener('DOMContentLoaded', () => {
+      $3Dmol.embed();
+
+      const viewer = $3Dmol.viewers[Object.keys($3Dmol.viewers)[0]];
+
+      document.getElementById("style-menu").addEventListener("change", (e) => {
+        const style = e.target.value;
+        const styles = {
+          stick: { stick: {} },
+          sphere: { sphere: { radius: 0.4 } },
+          line: { line: {} },
+          default: { stick: {}, sphere: { radius: 0.4 } }
+        };
+        viewer.setStyle({}, styles[style] || styles.default);
+        viewer.render();
+      });
+
+      document.getElementById("bg-menu").addEventListener("change", (e) => {
+        viewer.setBackgroundColor(e.target.value);
+        viewer.render();
+      });
+    });
+  </script>
 
 </body>
 </html>
