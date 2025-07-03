@@ -35,13 +35,13 @@
   // Load MTL and then OBJ
   const mtlLoader = new THREE.MTLLoader();
   mtlLoader.setPath('./'); // path to your MTL file
-  mtlLoader.load('model.mtl', function (materials) {
+  mtlLoader.load('3dmodel.mtl', function (materials) {
     materials.preload();
 
     const objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('./'); // path to your OBJ file
-    objLoader.load('model.obj', function (object) {
+    objLoader.load('3dmodel.obj', function (object) {
       object.scale.set(1, 1, 1); // adjust size if needed
       scene.add(object);
     });
