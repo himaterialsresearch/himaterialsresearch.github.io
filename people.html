@@ -70,15 +70,57 @@
       margin-top: 0;
     }
 
-    .faculty-list {
-      list-style: none;
-      padding-left: 0;
+    .intro p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .category {
+      margin-top: 40px;
+    }
+
+    .category h3 {
+      font-size: 1.5em;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .person-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .person {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 180px;
+      text-align: center;
+    }
+
+    .photo-placeholder {
+      width: 140px;
+      height: 160px;
+      background-color: #cccccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .person-name {
+      font-weight: bold;
       font-size: 1.1em;
     }
 
-    .faculty-list li {
-      padding: 8px 0;
-      border-bottom: 1px solid #ddd;
+    .person-role {
+      font-style: italic;
+      font-size: 0.95em;
+      margin: 2px 0;
+    }
+
+    .person-email {
+      font-size: 0.9em;
+      color: #555;
     }
 
     footer {
@@ -96,13 +138,12 @@
   <header>
     <div class="header-text">
       <h1>People</h1>
-      <p>Core Faculty at HIMaR</p>
+      <p>Hawaii Institute of Materials Research</p>
     </div>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
     <a href="people.html">People</a>
     <a href="research.html">Research</a>
     <a href="facilities.html">Facilities</a>
@@ -110,21 +151,37 @@
   </nav>
 
   <main>
-    <h2>Core Faculty</h2>
-    <ul class="faculty-list">
-      <li><strong>Przemyslaw Dera</strong> – HIGP</li>
-      <li><strong>Godwin Severa</strong> – HIGP</li>
-      <li><strong>Craig Jensen</strong> – Chemistry</li>
-      <li><strong>Joseph Brown</strong> – Mechanical Engineering</li>
-      <li><strong>Tayler Rey</strong> – Mechanical Engineering</li>
-      <li><strong>Rui Sun</strong> – Chemistry</li>
-      <li><strong>Yingwei Li</strong> – Chemistry</li>
-    </ul>
-  </main>
+    <section class="intro">
+      <h2>Our Team</h2>
+      <p>
+        The Hawaii Institute of Materials Research (HIMaR) is a virtual interdisciplinary institute that brings together researchers from several colleges at the University of Hawaii, including the School of Ocean and Earth Science and Technology (SOEST), the College of Engineering, and the College of Natural Sciences. HIMaR participants collaborate across disciplines to advance research in sustainable materials, sensors, catalysis, and nanotechnology.
+      </p>
+    </section>
 
-  <footer>
-    &copy; 2025 HIMaR – Hawaii Institute of Materials Research
-  </footer>
+    <section class="category">
+      <h3>Central Office</h3>
+      <div class="person-list">
+        <div class="person">
+          <div class="photo-placeholder"></div>
+          <div class="person-name">Przemyslaw Dera</div>
+          <div class="person-role">Director</div>
+          <div class="person-email">Email: TBD</div>
+        </div>
+        <div class="person">
+          <div class="photo-placeholder"></div>
+          <div class="person-name">Godwin Severa</div>
+          <div class="person-role">Associate Director</div>
+          <div class="person-email">Email: TBD</div>
+        </div>
+        <div class="person">
+          <div class="photo-placeholder"></div>
+          <div class="person-name">Makenzie Michel</div>
+          <div class="person-role">Project Administrator</div>
+          <div class="person-email">Email: TBD</div>
+        </div>
+      </div>
+    </section>
 
-</body>
-</html>
+    <section class="category">
+      <h3>Core Faculty</h3>
+      <div class="person-list">
