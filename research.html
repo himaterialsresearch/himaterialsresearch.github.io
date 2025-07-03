@@ -183,6 +183,17 @@
       margin-right: 10px;
     }
 
+    .video-container {
+      margin-top: 60px;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
     footer {
       text-align: center;
       font-size: 0.9em;
@@ -248,7 +259,7 @@
           <li>Sensors</li>
           <li>Nanosystem Integration</li>
           <li>Defect Diagnostics</li>
-		  <li>Materials Simulations</li>
+          <li>Materials Simulations</li>
         </ul>
       </div>
 
@@ -277,6 +288,14 @@
           </select>
         </div>
       </div>
+    </section>
+
+    <section class="video-container">
+      <h3>3D Animation</h3>
+      <video controls>
+        <source src="/movies/Zn3oac8emim2alpha%20Rotation4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </section>
   </main>
 
@@ -311,24 +330,28 @@
     window.addEventListener('DOMContentLoaded', () => {
       $3Dmol.embed();
 
-      const viewer = $3Dmol.viewers[Object.keys($3Dmol.viewers)[0]];
+      // wait until viewer is ready
+      setTimeout(() => {
+        const viewer = Object.values($3Dmol.viewers)[0];
+        if (!viewer) return;
 
-      document.getElementById("style-menu").addEventListener("change", (e) => {
-        const style = e.target.value;
-        const styles = {
-          stick: { stick: {} },
-          sphere: { sphere: { radius: 0.4 } },
-          line: { line: {} },
-          default: { stick: {}, sphere: { radius: 0.4 } }
-        };
-        viewer.setStyle({}, styles[style] || styles.default);
-        viewer.render();
-      });
+        document.getElementById("style-menu").addEventListener("change", (e) => {
+          const style = e.target.value;
+          const styles = {
+            stick: { stick: {} },
+            sphere: { sphere: { radius: 0.4 } },
+            line: { line: {} },
+            default: { stick: {}, sphere: { radius: 0.4 } }
+          };
+          viewer.setStyle({}, styles[style] || styles.default);
+          viewer.render();
+        });
 
-      document.getElementById("bg-menu").addEventListener("change", (e) => {
-        viewer.setBackgroundColor(e.target.value);
-        viewer.render();
-      });
+        document.getElementById("bg-menu").addEventListener("change", (e) => {
+          viewer.setBackgroundColor(e.target.value);
+          viewer.render();
+        });
+      }, 500);
     });
   </script>
 
