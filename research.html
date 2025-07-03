@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research – HIMaR</title>
+  <script src="https://3dmol.org/build/3Dmol-min.js"></script>
   <style>
     body {
       margin: 0;
@@ -136,9 +137,21 @@
       line-height: 1.6;
     }
 
+    .themes-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+
+    .themes {
+      flex: 1 1 50%;
+      min-width: 300px;
+    }
+
     .themes h3 {
       font-size: 1.5em;
-      margin-top: 40px;
       color: #003366;
     }
 
@@ -146,6 +159,14 @@
       list-style: disc;
       padding-left: 20px;
       font-size: 1.1em;
+    }
+
+    .viewer-container {
+      flex: 1 1 45%;
+      min-width: 300px;
+      height: 400px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
     }
 
     footer {
@@ -170,7 +191,6 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
     <a href="people.html">People</a>
     <a href="research.html">Research</a>
     <a href="facilities.html">Facilities</a>
@@ -205,15 +225,19 @@
       </div>
     </section>
 
-    <section class="themes">
-      <h3>Key Research Themes</h3>
-      <ul>
-        <li>Environmental Catalysts</li>
-        <li>Environmental Sorbents</li>
-        <li>Sensors</li>
-        <li>Nanosystem Integration</li>
-        <li>Defect Diagnostics</li>
-      </ul>
+    <section class="themes-flex">
+      <div class="themes">
+        <h3>Key Research Themes</h3>
+        <ul>
+          <li>Environmental Catalysts</li>
+          <li>Environmental Sorbents</li>
+          <li>Sensors</li>
+          <li>Nanosystem Integration</li>
+          <li>Defect Diagnostics</li>
+        </ul>
+      </div>
+
+      <div id="viewer" class="viewer-container"></div>
     </section>
   </main>
 
@@ -244,6 +268,17 @@
     }
 
     setInterval(autoAdvance, 4000); // advance every 4 seconds
+
+    // 3Dmol CIF viewer
+    const viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
+    fetch('3dmol/SIQMAK.cif')
+      .then(response => response.text())
+      .then(data => {
+        viewer.addModel(data, "cif");
+        viewer.setStyle({}, { stick: {}, sphere: { radius: 0.4 } });
+        viewer.zoomTo();
+        viewer.render();
+      });
   </script>
 
 </body>
