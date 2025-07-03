@@ -12,38 +12,31 @@
       background-color: #f9f9f9;
     }
 
-	header {
-	  background: url("banner2a.jpg") no-repeat center center;
-	  background-size: cover;
+    header {
+      background: url("banner2a.jpg") no-repeat center center;
+      background-size: cover;
       color: white;
-	  display: flex;
-	  align-items: center;
-	  padding: 30px 40px;
-	  min-height: 220px;
-	  position: relative;
-	}
-
-    .logo-placeholder {
-      width: 100px;
-      height: 100px;
-      background-color: #cccccc;
-      margin-right: 20px;
-      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding: 30px 40px;
+      min-height: 220px;
+      position: relative;
     }
 
-     .header-text h1 {
-	 margin: 0;
-	 font-size: 2.4em;
-	 color: #ffffff;
-	 text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-	}
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.4em;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
 
-	 .header-text p {
-	 margin: 5px 0 0;
-	 font-size: 1.2em;
-	 color: #e0e0e0;
-	 text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-	}
+    .header-text p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+      color: #e0e0e0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
     nav {
       background-color: #0059b3;
       display: flex;
@@ -80,35 +73,42 @@
       color: #003366;
       margin-top: 0;
     }
-.carousel-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding: 20px 0;
-  margin: 30px 0;
-  border-top: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
-}
 
-.carousel {
-  display: flex;
-  gap: 20px;
-}
+    .carousel-wrapper {
+      max-width: 1000px;
+      margin: 30px auto;
+      border-top: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      padding: 20px 0;
+    }
 
-.carousel-item {
-  width: 300px;
-  height: 180px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      padding: 20px;
-      background-color: #f0f0f0;
-      margin-top: 60px;
+    .carousel-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 20px;
+      padding-left: 10px;
+    }
+
+    .carousel-item {
+      width: 300px;
+      height: 180px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      background-color: #eee;
+      overflow: hidden;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     .image-placeholder {
@@ -116,6 +116,15 @@
       height: 200px;
       background-color: #cccccc;
       margin: 30px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -128,51 +137,54 @@
   </div>
 </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="people.html">People</a>
-    <a href="research.html">Research</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="outreach.html">Outreach</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="people.html">People</a>
+  <a href="research.html">Research</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="outreach.html">Outreach</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <div class="banner-placeholder"></div>
+<div class="banner-placeholder"></div>
 
-<h2>Explore Our Research</h2>
-<div class="carousel-container">
-  <div class="carousel">
-    <div class="carousel-item">
-		<img src="materialsforad.png" alt="Materials for AD" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;" />
-	</div>
-    <div class="carousel-item" style="background-color: #27ae60;"></div>
-    <div class="carousel-item" style="background-color: #2980b9;"></div>
-    <div class="carousel-item" style="background-color: #f39c12;"></div>
+<main>
+  <h2>Explore Our Research</h2>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-item" style="background-color: #e74c3c;"></div>
+
+        <div class="carousel-item">
+          <img src="materialsforad.png" alt="Materials for AD" />
+        </div>
+
+        <div class="carousel-item" style="background-color: #2980b9;"></div>
+        <div class="carousel-item" style="background-color: #f39c12;"></div>
+      </div>
+    </div>
   </div>
-</div>
 
+  <h2>Materials science in Hawaii</h2>
+  <p>Materials science is the study of the properties, structure, and performance of materials, from metals and ceramics to polymers and advanced composites. It plays a crucial role in developing new technologies, enabling innovations in industries such as aerospace, renewable energy, biotechnology, and advanced manufacturing.</p>
 
-  <main>
-    <h2>Materials science in Hawaii</h2>
-    <p>Materials science is the study of the properties, structure, and performance of materials, from metals and ceramics to polymers and advanced composites. It plays a crucial role in developing new technologies, enabling innovations in industries such as aerospace, renewable energy, biotechnology, and advanced manufacturing.</p>
-    
-    <p>In Hawaii, materials science is particularly important due to the state’s unique environmental and economic landscape. The islands face challenges related to sustainability, infrastructure resilience, and renewable energy, all of which can be addressed through advanced materials research. From corrosion-resistant materials for marine and aerospace applications to energy storage solutions for Hawaii’s clean energy transition, materials science drives innovation that supports the local economy and enhances technological self-sufficiency.</p>
-    
-    <p>At the Hawaii Institute of Materials Research (HIMaR), we bring together researchers, industry partners, and students to explore cutting-edge materials solutions, leveraging Hawaii’s unique resources and global scientific collaborations to advance materials science for a more sustainable future.</p>
+  <p>In Hawaii, materials science is particularly important due to the state’s unique environmental and economic landscape. The islands face challenges related to sustainability, infrastructure resilience, and renewable energy, all of which can be addressed through advanced materials research. From corrosion-resistant materials for marine and aerospace applications to energy storage solutions for Hawaii’s clean energy transition, materials science drives innovation that supports the local economy and enhances technological self-sufficiency.</p>
 
+  <p>At the Hawaii Institute of Materials Research (HIMaR), we bring together researchers, industry partners, and students to explore cutting-edge materials solutions, leveraging Hawaii’s unique resources and global scientific collaborations to advance materials science for a more sustainable future.</p>
 
+  <div class="image-placeholder"></div>
+</main>
 
-    <div class="image-placeholder"></div>
-  </main>
+<footer>
+  &copy; 2025 HIMaR – Hawaii Institute of Materials Research
+</footer>
 
-  <footer>
-    &copy; 2025 HIMaR – Hawaii Institute of Materials Research
-  </footer>
 <script>
   const carousel = document.querySelector('.carousel-container');
 
   let scrollAmount = 0;
-  let autoScrollSpeed = 1; // pixels per frame
+  let autoScrollSpeed = 1;
   let isHovered = false;
 
   function autoScroll() {
@@ -180,7 +192,7 @@
       scrollAmount += autoScrollSpeed;
       carousel.scrollLeft = scrollAmount;
       if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0; // Reset scroll to start
+        scrollAmount = 0;
       }
     }
     requestAnimationFrame(autoScroll);
@@ -191,5 +203,6 @@
 
   autoScroll();
 </script>
+
 </body>
 </html>
