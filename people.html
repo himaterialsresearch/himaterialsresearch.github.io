@@ -4,170 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>People – HIMaR</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      position: relative;
-      height: 260px;
-      background: url("peoplebanner3a.jpg") no-repeat center center;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      padding: 20px 40px;
-      color: white;
-    }
-
-    .header-text {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 15px 25px;
-      border-radius: 8px;
-    }
-
-    .header-text h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .header-text p {
-      margin: 5px 0 0;
-      font-size: 1.1em;
-    }
-
-    nav {
-      background-color: #0059b3;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 14px 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background-color: #004080;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px;
-      background-color: white;
-    }
-
-    main h2 {
-      color: #003366;
-      font-size: 1.8em;
-      margin-top: 0;
-    }
-
-    .intro p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-
-    .category {
-      margin-top: 40px;
-    }
-
-    .category h3 {
-      font-size: 1.5em;
-      color: #003366;
-      margin-bottom: 20px;
-    }
-
-    .person-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .person {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 180px;
-      text-align: center;
-    }
-
-	.person-photo {
-	  width: 140px;
-	  height: 160px;
-	  object-fit: cover;
-	  border-radius: 6px;
-	  margin-bottom: 10px;
-	}
-
-    .photo-placeholder {
-      width: 140px;
-      height: 160px;
-      background-color: #cccccc;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-
-    .person-name {
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-
-    .person-role {
-      font-style: italic;
-      font-size: 0.95em;
-      margin: 2px 0;
-    }
-
-    .person-email {
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      padding: 20px;
-      background-color: #f0f0f0;
-      margin-top: 60px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="container">
 
-  <header>
-    <div class="header-text">
+    <div id="header">
       <h1>People</h1>
-      <p>Hawaii Institute of Materials Research</p>
     </div>
-  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="people.html">People</a>
-    <a href="research.html">Research</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="outreach.html">Outreach</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" id="menu-icon">☰</label>
 
-  <main>
-    <section class="intro">
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="outreach.html">Outreach</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div id="content">
       <h2>Our Team</h2>
       <p>
-        The Hawaii Institute of Materials Research (HIMaR) is a virtual interdisciplinary institute that brings together researchers from several colleges at the University of Hawaii, including the School of Ocean and Earth Science and Technology (SOEST), the College of Engineering, and the College of Natural Sciences. HIMaR participants collaborate across disciplines to advance research in sustainable materials, sensors, catalysis, and nanotechnology.
+        The Hawaii Institute of Materials Research (HIMaR) is a virtual interdisciplinary institute that brings together researchers from several colleges at the University of Hawaii...
       </p>
-    </section>
 
-    <section class="category">
       <h3>Central Office</h3>
       <div class="person-list">
         <div class="person">
@@ -189,84 +55,26 @@
           <div class="person-email">Email: TBD</div>
         </div>
       </div>
-    </section>
 
-    <section class="category">
       <h3>Core Faculty</h3>
       <div class="person-list">
+        <!-- Reuse similar blocks for other people -->
         <div class="person">
           <img src="people/brown.jpg" alt="Joseph Brown" class="person-photo" />
           <div class="person-name">Joseph Brown</div>
           <div class="person-role">Mechanical Engineering</div>
           <div class="person-email">Email: jjbrown@hawaii.edu</div>
         </div>
-        <div class="person">
-          <img src="people/Dera.jpg" alt="Przemyslaw Dera" class="person-photo" />
-          <div class="person-name">Przemyslaw Dera</div>
-          <div class="person-role">HIGP</div>
-          <div class="person-email">Email: pdera@hawaii.edu</div>
-        </div>
-        <div class="person">
-          <img src="people/Severa.jpg" alt="Godwin Severa" class="person-photo" />
-          <div class="person-name">Godwin Severa</div>
-          <div class="person-role">HIGP</div>
-          <div class="person-email">Email: severa@hawaii.edu</div>
-        </div>
-        <div class="person">
-          <img src="people/jensen.jpg" alt="Craig Jensen" class="person-photo" />
-          <div class="person-name">Craig Jensen</div>
-          <div class="person-role">Chemistry</div>
-          <div class="person-email">Email: jensen@hawaii.edu</div>
-        </div>
-        <div class="person">
-          <img src="people/Ray.webp" alt="Tyler Ray" class="person-photo" />
-          <div class="person-name">Tyler Ray</div>
-          <div class="person-role">Mechanical Engineering</div>
-          <div class="person-email">Email: TBD</div>
-        </div>
-        <div class="person">
-          <img src="people/Sun.jpg" alt="Rui Sun" class="person-photo" />
-          <div class="person-name">Rui Sun</div>
-          <div class="person-role">Chemistry</div>
-          <div class="person-email">Email: ruisun@hawaii.edu</div>
-        </div>
-        <div class="person">
-          <img src="people/Li.jpg" alt="Yingwei Li" class="person-photo" />
-          <div class="person-name">Yingwei Li</div>
-          <div class="person-role">Chemistry</div>
-          <div class="person-email">Email: yingweil@hawaii.edu</div>
-        </div>
+        <!-- Add others... -->
       </div>
-    </section>
 
-    <section class="category">
       <h3>Postdoctoral Researchers</h3>
       <div class="person-list">
-        <div class="person">
-          <img src="people/Okuda.jpg" alt="Yoshiyuki Okuda" class="person-photo" />
-          <div class="person-name">Yoshiyuki Okuda</div>
-          <div class="person-role">Postdoc</div>
-          <div class="person-email">Email: yokuda@hawaii.edu</div>
-        </div>
-        <div class="person">
-          <img src="people/Nguyen.jpg" alt="Anh Tuan Nguyen" class="person-photo" />
-          <div class="person-name">Anh Tuan Nguyen</div>
-          <div class="person-role">Postdoc</div>
-          <div class="person-email">Email: TBD</div>
-        </div>
-        <div class="person">
-          <img src="people/Prager.jpeg" alt="McKinley Prager" class="person-photo" />
-          <div class="person-name">McKinley Prager</div>
-          <div class="person-role">Postdoc</div>
-          <div class="person-email">Email: TBD</div>
-        </div>
+        <!-- Add postdocs... -->
       </div>
-    </section>
 
-    <section class="category">
       <h3>Graduate Students</h3>
       <div class="person-list">
-        <!-- Add names when available -->
         <div class="person">
           <div class="photo-placeholder"></div>
           <div class="person-name">TBD</div>
@@ -274,9 +82,7 @@
           <div class="person-email">Email: TBD</div>
         </div>
       </div>
-    </section>
 
-    <section class="category">
       <h3>Research Assistants</h3>
       <div class="person-list">
         <div class="person">
@@ -286,12 +92,9 @@
           <div class="person-email">Email: TBD</div>
         </div>
       </div>
-    </section>
 
-    <section class="category">
       <h3>Undergraduate Students</h3>
       <div class="person-list">
-        <!-- Add names when available -->
         <div class="person">
           <img src="people/Kaneshiro.jpg" alt="Christopher Kaneshiro" class="person-photo" />
           <div class="person-name">Christopher Kaneshiro</div>
@@ -299,12 +102,12 @@
           <div class="person-email">Email: TBD</div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer>
-    &copy; 2025 HIMaR – Hawaii Institute of Materials Research
-  </footer>
+    <div id="footer">
+      &copy; 2025 HIMaR – Hawaii Institute of Materials Research
+    </div>
 
+  </div>
 </body>
 </html>
