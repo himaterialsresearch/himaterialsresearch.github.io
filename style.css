@@ -83,6 +83,7 @@ body {
   padding: 30px;
   overflow: hidden;
   word-wrap: break-word;
+  white-space: normal; /* Add this line */
 }
 
 .carousel-container {
