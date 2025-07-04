@@ -81,17 +81,8 @@ body {
 
 #content {
   padding: 30px;
-  overflow: visible;
-  text-overflow: unset;
+  overflow: hidden;
   word-wrap: break-word;
-  white-space: normal; /* Add this line */
-}
-
-#content p, .intro p {
-  white-space: normal;
-  overflow: visible;
-  text-overflow: unset;
-  display: block;
 }
 
 .carousel-container {
@@ -134,6 +125,26 @@ body {
   padding: 6px 8px;
   text-align: center;
 }
+
+#footer {
+  font-size: 0.9em;
+  text-align: center;
+  color: #777;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-top: 60px;
+} 
+
+
+/* Fix text wrapping in main content and people intro */
+#content p, .intro p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  display: block;
+}
+
+/* Fix layout of people list */
 .person-list {
   display: flex;
   flex-wrap: wrap;
@@ -185,13 +196,3 @@ body {
     justify-content: center;
   }
 }
-
-
-#footer {
-  font-size: 0.9em;
-  text-align: center;
-  color: #777;
-  background-color: #f0f0f0;
-  padding: 20px;
-  margin-top: 60px;
-} 
