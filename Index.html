@@ -34,7 +34,7 @@
 
     .header-text h1 {
       margin: 0;
-      font-size: 4.0em;
+      font-size: 3.0em;
       color: #ffffff;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     }
@@ -46,23 +46,30 @@
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
 
+	.page-inner {
+	max-width: 1000px;
+	margin: auto;
+	padding: 30px 40px;
+	box-sizing: border-box;
+	}
+	
     nav {
-      background-color: #0059b3;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 14px 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background-color: #004080;
-    }
+	background-color: #0059b3;
+	}
+	nav .page-inner {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	}
+	nav a {
+	padding: 14px 20px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	}
+	nav a:hover {
+	background-color: #004080;
+	}
 
     main {
       padding: 40px;
@@ -155,20 +162,23 @@
 <body>
 
 <header>
-  <div class="header-inner">
+  <div class="page-inner">
     <div class="header-text">
       <h1>Hawaii Institute of Materials Research</h1>
     </div>
   </div>
 </header>
+
 <nav>
-  <a href="index.html">Home</a>
-  <a href="people.html">People</a>
-  <a href="research.html">Research</a>
-  <a href="facilities.html">Facilities</a>
-  <a href="news.html">News</a>
-  <a href="outreach.html">Outreach</a>
-  <a href="contact.html">Contact</a>
+  <div class="page-inner">
+    <a href="index.html">Home</a>
+    <a href="people.html">People</a>
+    <a href="research.html">Research</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="news.html">News</a>
+    <a href="outreach.html">Outreach</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
 <main>
