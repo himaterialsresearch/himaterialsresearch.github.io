@@ -20,9 +20,16 @@
       color: white;
       display: flex;
       align-items: center;
-      padding: 30px 40px;
+      justify-content: center;
       min-height: 220px;
       position: relative;
+    }
+
+    .header-inner {
+      max-width: 1000px;
+      width: 100%;
+      padding: 30px 40px;
+      box-sizing: border-box;
     }
 
     .header-text h1 {
@@ -148,9 +155,10 @@
 <body>
 
 <header>
-  <img src="HIMaRlogo.png" alt="HIMaR Logo" style="height: 120px; margin-right: 20px;" />
-  <div class="header-text">
-    <h1>Hawaii Institute of Materials Research</h1>
+  <div class="header-inner">
+    <div class="header-text">
+      <h1>Hawaii Institute of Materials Research</h1>
+    </div>
   </div>
 </header>
 
