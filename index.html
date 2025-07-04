@@ -2,99 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIMaR – Hawaii Institute of Materials Research</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<div id="container">
-
-  <div id="header">
-    <h1>Hawaii Institute of Materials Research</h1>
-  </div>
-
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle" id="menu-icon">&#9776;</label>
-
-  <div id="navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="people.html">People</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="facilities.html">Facilities</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="outreach.html">Outreach</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-
-  <div id="content">
-
-    <div class="carousel-container">
-      <div class="carousel" id="carousel">
-        <div class="carousel-item">
-          <img src="cleanwater.webp" alt="Clean Water">
-          <div class="carousel-label">Clean Water Technology</div>
-        </div>
-        <div class="carousel-item">
-          <img src="materialsforgassorption.jpg" alt="Sorbents">
-          <div class="carousel-label">Sorbents for Clean Air</div>
-        </div>
-        <div class="carousel-item">
-          <img src="materialsforad.png" alt="Advanced Manufacturing">
-          <div class="carousel-label">Advanced Manufacturing</div>
-        </div>
-        <div class="carousel-item">
-          <img src="nanomaterials.jpg" alt="Nanomaterials">
-          <div class="carousel-label">Nanomaterials</div>
-        </div>
-        <div class="carousel-item">
-          <img src="sensors.jpg" alt="Smart Sensors">
-          <div class="carousel-label">Smart Sensors</div>
-        </div>
-        <div class="carousel-item">
-          <img src="sustainableenergy.jpg" alt="Sustainable Energy">
-          <div class="carousel-label">Sustainable Energy</div>
-        </div>
-      </div>
+  <div id="container">
+    <div id="header">
+      <h1>Hawaii Institute of Materials Research</h1>
     </div>
 
-    <h2>Materials science in Hawaii</h2>
-    <p>Materials science is the study of the properties, structure, and performance of materials, from metals and ceramics to polymers and advanced composites...</p>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" id="menu-icon">☰</label>
 
-    <p>In Hawaii, materials science is particularly important due to the state’s unique environmental and economic landscape...</p>
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="outreach.html">Outreach</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
 
-    <p>At the Hawaii Institute of Materials Research (HIMaR), we bring together researchers, industry partners, and students...</p>
+    <div id="content">
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <div class="carousel-item">
+            <img src="cleanwater.webp" alt="Clean Water" />
+            <div class="carousel-label">Clean Water Technology</div>
+          </div>
+          <div class="carousel-item">
+            <img src="materialsforgassorption.jpg" alt="Sorbents" />
+            <div class="carousel-label">Sorbents for Clean Air</div>
+          </div>
+          <div class="carousel-item">
+            <img src="materialsforad.png" alt="Advanced Manufacturing" />
+            <div class="carousel-label">Advanced Manufacturing</div>
+          </div>
+          <div class="carousel-item">
+            <img src="nanomaterials.jpg" alt="Nanomaterials" />
+            <div class="carousel-label">Nanomaterials</div>
+          </div>
+          <div class="carousel-item">
+            <img src="sensors.jpg" alt="Smart Sensors" />
+            <div class="carousel-label">Smart Sensors</div>
+          </div>
+          <div class="carousel-item">
+            <img src="sustainableenergy.jpg" alt="Sustainable Energy" />
+            <div class="carousel-label">Sustainable Energy</div>
+          </div>
+        </div>
+      </div>
 
+      <h2>Materials science in Hawaii</h2>
+      <p>Materials science is the study of the properties, structure, and performance of materials...</p>
+      <p>In Hawaii, materials science is particularly important due to the state’s unique environmental and economic landscape...</p>
+      <p>At the Hawaii Institute of Materials Research (HIMaR), we bring together researchers, industry partners, and students...</p>
+    </div>
+
+    <div id="footer">
+      &copy; 2025 HIMaR – Hawaii Institute of Materials Research
+    </div>
   </div>
 
-  <div id="footer">
-    &copy; 2025 HIMaR – Hawaii Institute of Materials Research
-  </div>
+  <script>
+    const carousel = document.getElementById("carousel");
+    let scrollAmount = 0;
+    let speed = 1;
 
-</div>
-
-<script>
-  const carousel = document.getElementById('carousel');
-
-  let scrollAmount = 0;
-  let autoScrollSpeed = 1;
-
-  function autoScroll() {
-    if (carousel.scrollWidth > carousel.clientWidth) {
-      scrollAmount += autoScrollSpeed;
-      carousel.scrollLeft = scrollAmount;
-
-      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0;
+    function autoScroll() {
+      scrollAmount += speed;
+      if (carousel.scrollWidth > carousel.clientWidth) {
+        if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+          scrollAmount = 0;
+        }
+        carousel.scrollLeft = scrollAmount;
       }
+      requestAnimationFrame(autoScroll);
     }
-    requestAnimationFrame(autoScroll);
-  }
 
-  autoScroll();
-</script>
-
+    window.addEventListener("load", autoScroll);
+  </script>
 </body>
 </html>
