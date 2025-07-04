@@ -87,6 +87,13 @@ body {
   white-space: normal; /* Add this line */
 }
 
+#content p, .intro p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  display: block;
+}
+
 .carousel-container {
   margin: 30px 0;
   border-top: 2px solid #ccc;
@@ -127,6 +134,58 @@ body {
   padding: 6px 8px;
   text-align: center;
 }
+.person-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+.person {
+  width: 180px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.person-photo,
+.photo-placeholder {
+  width: 140px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.person-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+}
+
+.person-role {
+  font-style: italic;
+  font-size: 0.95em;
+  margin: 2px 0;
+}
+
+.person-email {
+  font-size: 0.9em;
+  color: #555;
+}
+
+@media screen and (max-width: 600px) {
+  .person {
+    width: 100%;
+  }
+
+  .person-list {
+    justify-content: center;
+  }
+}
+
 
 #footer {
   font-size: 0.9em;
