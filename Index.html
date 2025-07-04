@@ -14,62 +14,51 @@
       background-attachment: fixed;
     }
 
-    header {
-	background: url("banner2a.jpg") no-repeat center center;
-	background-size: cover;
-	color: white;
-	min-height: 220px;
-	position: relative;
-	}
+    .page-inner {
+      max-width: 1000px;
+      margin: auto;
+      box-sizing: border-box;
+    }
 
-	.header-inner {
-	max-width: 1000px;
-	margin: auto;
-	padding: 30px 40px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	box-sizing: border-box;
-	}
+    header {
+      background-color: #00284d;
+    }
+
+    .header-inner {
+      background: url("banner2a.jpg") no-repeat center center;
+      background-size: cover;
+      padding: 30px 40px;
+      color: white;
+    }
 
     .header-text h1 {
       margin: 0;
-      font-size: 3.0em;
+      font-size: 3em;
       color: #ffffff;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     }
 
-    .header-text p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-      color: #e0e0e0;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    nav {
+      background-color: #0059b3;
     }
 
-	.page-inner {
-	max-width: 1000px;
-	margin: auto;
-	padding: 30px 40px;
-	box-sizing: border-box;
-	}
-	
-    nav {
-	background-color: #0059b3;
-	}
-	nav .page-inner {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	}
-	nav a {
-	padding: 14px 20px;
-	text-decoration: none;
-	color: white;
-	font-weight: bold;
-	}
-	nav a:hover {
-	background-color: #004080;
-	}
+    nav .page-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 10px 16px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    nav a:hover {
+      background-color: #004080;
+    }
 
     main {
       padding: 40px;
@@ -163,8 +152,10 @@
 
 <header>
   <div class="page-inner">
-    <div class="header-text">
-      <h1>Hawaii Institute of Materials Research</h1>
+    <div class="header-inner">
+      <div class="header-text">
+        <h1>Hawaii Institute of Materials Research</h1>
+      </div>
     </div>
   </div>
 </header>
@@ -196,7 +187,7 @@
         <div class="carousel-item">
           <div class="carousel-inner">
             <img src="materialsforgassorption.jpg" alt="Sorbents for clean air">
-            <div class="carousel-label">Sorbents for clean air</div>
+            <div class="carousel-label">Sorbents for Clean Air</div>
           </div>
         </div>
 
@@ -209,21 +200,21 @@
 
         <div class="carousel-item">
           <div class="carousel-inner">		  
-		    <img src="nanomaterials.jpg" alt="Nanomaterials">
+            <img src="nanomaterials.jpg" alt="Nanomaterials">
             <div class="carousel-label">Nanomaterials</div>
           </div>
         </div>
 
         <div class="carousel-item">
           <div class="carousel-inner">		  
-		    <img src="sensors.jpg" alt="Smart sensors">
-            <div class="carousel-label">Smart sensors</div>
+            <img src="sensors.jpg" alt="Smart Sensors">
+            <div class="carousel-label">Smart Sensors</div>
           </div>
         </div>
-		
+
         <div class="carousel-item">
           <div class="carousel-inner">
-		    <img src="sustainableenergy.jpg" alt="Sustainable energy">
+            <img src="sustainableenergy.jpg" alt="Sustainable Energy">
             <div class="carousel-label">Sustainable Energy</div>
           </div>
         </div>
