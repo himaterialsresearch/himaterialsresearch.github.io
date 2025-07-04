@@ -104,30 +104,33 @@
       overflow: hidden;
     }
 
-    .carousel-item img {
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .carousel-inner img,
+    .carousel-content {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      display: block;
     }
-		
-	.carousel-content {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 10px 10px 0 0;
-	}
 
-	.carousel-label {
-	background-color: rgba(0, 0, 0, 0.6);
-	color: white;
-	font-size: 0.95em;
-	text-align: center;
-	padding: 6px 8px;
-	border-radius: 0 0 10px 10px;
-	position: relative;
-	top: -40px;
-	}
+    .carousel-label {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 6px 8px;
+      font-size: 0.95em;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      box-sizing: border-box;
+    }
 
     .image-placeholder {
       width: 100%;
@@ -171,22 +174,42 @@
   <div class="carousel-wrapper">
     <div class="carousel-container">
       <div class="carousel">
-        <div class="carousel-item" style="background-color: #e74c3c;"></div>
 
         <div class="carousel-item">
-          <img src="cleanwater.webp" alt="Clean water" />
-		  <div class="carousel-content" style="background-color: #e74c3c;"></div>
-		  <div class="carousel-label">"Clean water"</div>		
+          <div class="carousel-inner">
+            <div class="carousel-content" style="background-color: #e74c3c;"></div>
+            <div class="carousel-label">Advanced Manufacturing</div>
+          </div>
         </div>
 
         <div class="carousel-item">
-          <img src="materialsforad.png" alt="Materials for AD" />
-		  <div class="carousel-content" style="background-color: #e74c3c;"></div>
-		  <div class="carousel-label">"Advanced manufacturing"</div>		
+          <div class="carousel-inner">
+            <img src="cleanwater.webp" alt="Clean Water">
+            <div class="carousel-label">Clean Water Technology</div>
+          </div>
         </div>
 
-        <div class="carousel-item" style="background-color: #2980b9;"></div>
-        <div class="carousel-item" style="background-color: #f39c12;"></div>
+        <div class="carousel-item">
+          <div class="carousel-inner">
+            <img src="materialsforad.png" alt="Materials for AD">
+            <div class="carousel-label">Materials for Additive Design</div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-inner">
+            <div class="carousel-content" style="background-color: #2980b9;"></div>
+            <div class="carousel-label">Nanomaterials</div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-inner">
+            <div class="carousel-content" style="background-color: #f39c12;"></div>
+            <div class="carousel-label">Sustainable Energy</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
