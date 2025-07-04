@@ -9,7 +9,9 @@
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       color: #333;
-      background-color: #f9f9f9;
+      background: url("pagebackground1.jpg") no-repeat center top;
+      background-size: cover;
+      background-attachment: fixed;
     }
 
     header {
@@ -53,12 +55,6 @@
 
     nav a:hover {
       background-color: #004080;
-    }
-
-    .banner-placeholder {
-      width: 100%;
-      height: 250px;
-      background-color: #d9d9d9;
     }
 
     main {
@@ -151,7 +147,8 @@
 </head>
 <body>
 
-<header>  
+<header>
+  <img src="HIMaRlogo.png" alt="HIMaR Logo" style="height: 120px; margin-right: 20px;" />
   <div class="header-text">
     <h1>Hawaii Institute of Materials Research</h1>
   </div>
@@ -167,10 +164,17 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<main>  
+<main>
   <div class="carousel-wrapper">
     <div class="carousel-container">
       <div class="carousel">
+
+        <div class="carousel-item">
+          <div class="carousel-inner">
+            <div class="carousel-content" style="background-color: #e74c3c;"></div>
+            <div class="carousel-label">Advanced Manufacturing</div>
+          </div>
+        </div>
 
         <div class="carousel-item">
           <div class="carousel-inner">
@@ -181,43 +185,22 @@
 
         <div class="carousel-item">
           <div class="carousel-inner">
-            <img src="materialsforgassorption.jpg" alt="Sorbents for clean air">
-            <div class="carousel-label">Sorbents for clean air</div>
+            <img src="materialsforad.png" alt="Materials for AD">
+            <div class="carousel-label">Materials for Additive Design</div>
           </div>
         </div>
 
         <div class="carousel-item">
           <div class="carousel-inner">
-            <img src="materialsforad.png" alt="Advanced Manufacturing">
-            <div class="carousel-label">Advanced Manufacturing</div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-inner">
-		    <img src="nanomaterials.jpg" alt="Nanomaterials">            
+            <div class="carousel-content" style="background-color: #2980b9;"></div>
             <div class="carousel-label">Nanomaterials</div>
           </div>
         </div>
 
         <div class="carousel-item">
           <div class="carousel-inner">
-		    <img src="sensors.jpg" alt="Smart sensors">            
-            <div class="carousel-label">Smart Sensors</div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-inner">
-		    <img src="soilhealth.webp" alt="Soil health">            
-            <div class="carousel-label">Soil health</div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="carousel-inner">
-            <img src="sustainableenergy.jpg" alt="Sustainable energy">
-            <div class="carousel-label">Sustainable energy</div>
+            <div class="carousel-content" style="background-color: #f39c12;"></div>
+            <div class="carousel-label">Sustainable Energy</div>
           </div>
         </div>
 
