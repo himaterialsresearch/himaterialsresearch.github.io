@@ -68,6 +68,12 @@ body {
   background-color: #004080;
 }
 
+#content {
+  padding: 30px;
+  overflow: hidden; /* fixes float overflow */
+  word-wrap: break-word;
+}
+
 /* SIDEBAR NAV for small screens */
 @media screen and (max-width: 768px) {
   #menu-icon {
